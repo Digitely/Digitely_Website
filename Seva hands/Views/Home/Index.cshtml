@@ -1,0 +1,570 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+
+
+
+<style>
+    /* Add some spacing between sections */
+    .about_section {
+        margin-bottom: 30px;
+    }
+
+
+
+ 
+    
+    
+    .padded-paragraph {
+        padding-top: 80px; /* Adjust the value as needed */
+    }
+
+
+    .heading_container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-and-detail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-box {
+        margin-bottom: 20px;
+    }
+
+    .detail-box p {
+        margin-bottom: 20px;
+    }
+    /* Style the video */
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+</style>
+
+
+
+
+
+    
+
+<body>
+    <div class="hero_area">
+
+        <!-- end header section -->
+        <!-- slider section kn-->
+        <section class=" slider_section position-relative">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="box">
+                                <div class="row">
+
+
+
+                                   
+                                    <div class="col-md-7">
+                                        <div class="detail-box">
+                                            <div>
+                                                <h1 style="color: red; border-bottom: 4px solid red;">
+                                                   SEVA HANDS
+                                                 </h1>
+
+                                             
+                                                <h2 style="margin-left: 100px;">
+                                                    Serving With Sincerity
+                                                </h2>
+
+                                                <h4 style="margin-left: 450px;">
+                                                               NPO : 235 - 360
+                                                   </h4>
+
+                                                <div class="" >
+                                                    <a href=" @ViewBag.PaypalUrl" style="border-radius:0px;">
+                                                        Donate
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="img-box">
+                                               <img src="~/images/logotrans.png" alt="" style="width: 600px; height: 450px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="detail-box">
+
+                                            <div>
+                                                <h10>
+                                                There is no greater gift you can give yourself, than to act on the thought of giving others.
+                                                   
+                                            </h10>
+                                               
+                                                <div class="">
+                                                    <a href="@ViewBag.PaypalUrl" style="border-radius:0px;">
+                                                        Donate
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                         <div class="img-box" style="block-size:contain">
+
+                                               <img src="~/images/sandwichpic-fotor-2023110611159.jpg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="detail-box">
+                                            <div>
+                                                <h10>
+                                                    It liberates you in unspeakable ways and sends through ripples of goodness in multiple directions.
+                                                </h10>
+                                                <div class="sandwich-count">
+                                                    
+                                                </div>
+                                                <div class="" >
+                                                    <a href="@ViewBag.PaypalUrl" style="border-radius: 0px;">
+                                                        Donate
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="img-box">
+                                            <img src="~/images/carTwo.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .sandwich-count p {
+                            color: red;
+                          font-size: 20px;
+                          font-family: Britannic;
+                           text-decoration: underline;
+
+
+                        }
+
+
+                        .carousel-item .box .row .col-md-7 .detail-box a {
+                            margin-top: 10px;
+                            border-radius: 0px;
+                        }
+                    </style>
+
+
+                    <script>
+                        var numberOfSandwiches = 2000; // You can change this value to whatever you want
+                         var numberOfSandwiches =@ViewBag.CounterValue
+                        var h10Element = document.querySelector('h10');
+                        var sandwichCountElement = document.querySelector('.sandwich-count');
+
+                        if (h10Element && sandwichCountElement) {
+                            var variableElement = document.createElement('p');
+                            variableElement.textContent = 'Number of sandwiches made: ' + numberOfSandwiches;
+                            sandwichCountElement.appendChild(variableElement);
+                        }
+                    </script>
+
+
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="detail-box">
+                                            <div>
+                                                <h10>
+
+                                                    Seva Hands came together through friendship and fellowship and has grown organically since 2019.
+                                                </h10>
+                                               
+                                                <div class="">
+                                                    <a href="@ViewBag.PaypalUrl" style="border-radius:0px;">
+                                                        Donate
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="img-box">
+                                          <img src="~/images/carFour.png" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="detail-box">
+                                            <div>
+                                               
+                                               <h10 style="text-align:justify">
+                                                  We are grateful for the support we receive to sustain our school lunch programme, 
+                                                  supporting a number of schools in the Reservoir Hills and Clare Estate area,
+                                                  in Durban, KZN
+
+                                               </h10>
+                                                <div class="">
+                                                    <a href="@ViewBag.PaypalUrl" style="border-radius:0px;">
+                                                        Donate
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:-25px">
+                                        <div class="img-box" style="margin-left:25px">
+                                             <img src="~/images/carFive.png" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end slider section -->
+    </div>
+
+    <!-- how section -->
+    <section class="how_section layout_padding custom-bg-color" id="explore" >
+        <div class="heading_container">
+            <h2>
+                Seva Hands Projects
+            </h2>
+        </div>
+        <div class="how_container" style="margin-left: -30px;">
+            <div class="box" style="margin-top: -30px;">
+                <div class="img-box">
+                    <img src="~/images/foodseva.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  
+                    <p style="text-align: justify; font-size:14px">
+                         
+Seva Hands flagship project, our Sandwich Drive, serves over 500 lunches a week to learners in the Reservoir Hills
+and Clare Estate community. During the dark times of COVID we sustained our efforts and were buoyed by the testimony
+of teachers that shared stories of guaranteed attendance on the days we supplied lunches. One sandwich can make a difference
+- we have seen this for ourselves. The larger message through this time was the fact that we were not just providing a sandwich, 
+we were steadfast in our support. Hope, faith and love came in the form of a sandwich.
+
+                    </p>
+                </div>
+            </div>
+            <div class="box" style="margin-top: -30px;">
+                <div class="img-box">
+                    <img src="~/images/middleseva-fotor.jpg" alt="" />
+                </div>
+                <div class="detail-box">
+                  
+                    <p style="text-align: justify; font-size:14px">
+                        
+                        Our annual Diwali Hamper Drive has been a staple of Seva Hands since 2019 and accompanying this annual
+                        drive is the provision of ad-hoc hampers. As Seva Hands grew organically, our community faced a battery
+                        of challenges and we geared ourselves to support them. The power of collective efforts saw us supporting 
+                        those in need during COVID, the floods and riots. Being receptive to our community is what drives us as we
+                        know the value of uplifting those in need when they are feeling the lowest.
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="box" style="margin-top: -30px;">
+                <div class="img-box">
+                    <img src="~/images/helpedchild.png" alt="" />
+                </div>
+                <div class="detail-box">
+
+                    <p style="text-align: justify;font-size:14px">
+
+                        
+                        Seva Hands also provides sandwiches to the local Senior Citizens while they are waiting for their pension payouts.
+                        We maintain contact with the local Senior Citizens homes and Homes of Safety, assisting where we can. During the
+                        school holidays we distribute the bread, we are fortunate enough to receive, to the various Homes and communities 
+                        around us. We have witnessed the joy on the faces of those receiving the simplest of gifts and that fills our cups!
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        @* <div class="btn-box">
+        <a href=""> 
+        Read More
+        </a>
+        </div>*@
+    </section>
+    <!-- end how section -->
+    <!-- about section -->
+
+    <section class="about_section layout_padding-bottom"   id="about-us">
+        <div class="container">
+            <div class="heading_container">
+                <h2 style="font-size: 30px;">About us</h2>
+            </div>
+
+            <div class="box">
+                <div class="image-and-detail-container">
+                    <div class="img-box">
+                        <video controls width="550" height="550">
+                            <source src="~/images/shVideo.mp4" type="video/mp4">
+     
+                        </video>
+                       
+                    </div>
+                    <div class="detail-box" style="font-size: 18px;" >
+                        <p class="padded-paragraph">
+                            Seva Hands is a non-profit organisation that was established in 2019 by a group of friends. What brought us together  was our common desire to make a positive impact on our community. Our journey began with a simple goal of providing school lunches to learners in need in our local schools. We saw the link between the sustenance of a child, their succesful performance in school and the step change in the quality of the lives of each child AND their respective families.
+                            The challenges of COVID illustrated the need to be receptive to the broader needs of our community and we actively rose to support these needs. The cornerstones of operating with absolute transparency and integrity, coupled with attaining all relevant certification, has seen our network grow and this feeds into our desire to grow our reach and positively impact upon more lives.
+
+                        </p>
+                        <!-- <div class="btn-box">
+                            <a href="">Read More</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end about section -->
+    <!-- app section -->
+
+    <section class="app_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <h2>
+                            Download our app
+                        </h2>
+                        <p>
+                            Download the Seva Hands mobile app today and join our compassionate community, making a positive impact on the world through seamless and meaningful contributions to those in need.
+                        </p>
+                        <div class="download_box">
+                            <h5>
+                                Download Now
+                            </h5>
+                            <div class="btn-box">
+                          
+                                <a href="https://play.google.com/store/apps/details?id=seva.sevahandsversionone">
+                                    <img src="~/images/play-store.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="~/images/logosevahome.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end app section -->
+    <!-- auto section -->
+
+    
+
+    <!-- end client section -->
+  @*  <!-- info section -->
+    <section class="info_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <div class="info_logo">
+                            <a href="index.html">
+                                <span>
+                                    SEVA HANDS
+                                </span>
+                            </a>
+                        </div>
+                        <h5>
+                            Contact Us
+                        </h5>
+                        <div>
+                            <div class="img-box">
+                                <img src="~/images/location.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                Page when looking at its layou
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="~/images/phone.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                +01 1234567890
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="~/images/envelope.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                demo@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_info">
+                        <h5>
+                            Info
+                        </h5>
+                        <p>
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                            in some form, by injected humour,
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info_links">
+                        <h5>
+                            Useful Links
+                        </h5>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    There are many
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    variations of
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    passages of
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Lorem Ipsum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    available, but the
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    majority have
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    suffered
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_form ">
+                        <h5>
+                            Newsletter
+                        </h5>
+                        <form action="">
+                            <input type="email" placeholder="Enter your email" />
+                            <button>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end info_section -->*@
+    <!-- footer section -->
+    
+    <!-- footer section -->
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- owl carousel script
+      -->
+    <script type="text/javascript">
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 0,
+            navText: [],
+            center: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    </script>
+    <!-- end owl carousel script -->
+</body>
+
+</html>

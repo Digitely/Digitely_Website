@@ -1,0 +1,128 @@
+﻿@{
+    string merchantId = "10000100";
+    string merchantKey = "46f0cd694581a";
+    string returnUrl = "https://www.example.com/success";
+    string cancelUrl = "https://www.example.com/cancel";
+    string notifyUrl = "https://www.example.com/notify";
+    string nameFirst = "John";
+    string nameLast = "Doe";
+    string emailAddress = "john@doe.com";
+    string cellNumber = "0823456789";
+    string mPaymentId = "01AB";
+    decimal amount = 100.00m;
+    string itemName = "Test Item";
+    string itemDescription = "A test product";
+    int customInt1 = 2;
+    string customStr1 = "Extra order information";
+    bool emailConfirmation = true;
+    string confirmationAddress = "john@doe.com";
+    string paymentMethod = "cc";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donation Page</title>
+    <!-- Add your CSS links here -->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- Add your CSS links here -->
+</head>
+<body>
+    <div class="hero_area">
+        <!-- Add your header section here if needed -->
+    </div>
+
+    <!-- Add your slider section here if needed -->
+    <!-- Add your how section here if needed -->
+    <!-- Add your about section here if needed -->
+    <!-- Add your app section here if needed -->
+    <!-- Add your info section here if needed -->
+    <!-- Add your footer section here if needed -->
+    <!-- Add your footer section here if needed -->
+
+    <section class="donate_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="message-box">
+                        <h2>Donation Page</h2>
+                        <form method="post" action="https://sandbox.payfast.co.za/eng/process">
+                            <input type="hidden" name="merchant_id" value="@merchantId">
+                            <input type="hidden" name="merchant_key" value="@merchantKey">
+                            <input type="hidden" name="return_url" value="@returnUrl">
+                            <input type="hidden" name="cancel_url" value="@cancelUrl">
+                            <input type="hidden" name="notify_url" value="@notifyUrl">
+
+                            <div class="form-group">
+                                <label for="name_first">First Name:</label>
+                                <input type="text" id="name_first" name="name_first" value="@nameFirst" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name_last">Last Name:</label>
+                                <input type="text" id="name_last" name="name_last" value="@nameLast" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email_address">Email Address:</label>
+                                <input type="email" id="email_address" name="email_address" value="@emailAddress"
+                                       class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cell_number">Cell Number:</label>
+                                <input type="text" id="cell_number" name="cell_number" value="@cellNumber"
+                                       class="form-control">
+                            </div>
+
+                            <input type="hidden" name="m_payment_id" value="@mPaymentId">
+
+                            <div class="form-group">
+                                <label for="amount">Amount:</label>
+                                <input type="text" id="amount" name="amount" value="@amount" class="form-control">
+                            </div>
+
+                            <input type="hidden" name="item_name" value="@itemName">
+
+                            <input type="hidden" name="item_description" value="@itemDescription">
+
+                            <input type="hidden" name="custom_int1" value="@customInt1">
+
+                            <input type="hidden" name="custom_str1" value="@customStr1">
+
+                            <input type="hidden" name="email_confirmation" value="@(emailConfirmation ? 1 : 0)">
+
+                            <div class="form-group">
+                                <label for="confirmation_address">Confirmation Address:</label>
+                                <input type="email" id="confirmation_address" name="confirmation_address"
+                                       value="@confirmationAddress" class="form-control">
+                            </div>
+
+                            <input type="hidden" name="payment_method" value="@paymentMethod">
+
+                            <button type="submit" class="btn btn-primary">Donate</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <!-- Choose any picture from the index page -->
+                        <img src="~/images/logotrans.png" alt="" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add your other sections here if needed -->
+    <!-- Add your scripts here -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Add your scripts here -->
+</body>
+</html>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Page</title>
+    <style>
+
+        .heading_container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+            .heading_container h2 {
+                font-weight: bold;
+                position: relative;
+                padding-top: 30px;
+            }
+
+                .heading_container h2::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -6px;
+                    left: 50%;
+                    width: 75px;
+                    height: 5px;
+                    background-color: #30ae69;
+                    -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                }
+
+     
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+
+        .event {
+            width: 200px;
+            margin: 10px; /* Add margin to create spacing between event boxes */
+            padding: 20px;
+            text-align: center;
+            background-color: #FFFDD0;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+
+            .event::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 5px; /* Adjust the thickness of the underline as needed */
+                background-color: #30ae69;
+                margin-top: 10px; /* Adjust the spacing between the box and the underline as needed */
+                border-radius: 2px; /* Optional: Add some rounding to the underline ends */
+            }
+
+     
+    </style>
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/style.css"> <!-- Adjust the path to your custom CSS file -->
+</head>
+<body>
+    <div class="heading_container">
+        <h2>
+            Upcoming Events
+        </h2>
+    </div>
+    <div class="container mt-4">
+        <div id="eventsContainer" class="row"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgtKfKalMrFgJ3DinCkqhjGShppxxDgIU",
+            authDomain: "sevahands-4c62d.firebaseapp.com",
+            projectId: "sevahands-4c62d",
+            storageBucket: "sevahands-4c62d.appspot.com",
+            messagingSenderId: "585674093065",
+            appId: "1:585674093065:web:a2187fe9bf194037f63ed8",
+            measurementId: "G-VH3KMBZPLJ"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        var db = firebase.firestore();
+        var eventsContainer = document.getElementById('eventsContainer');
+
+        db.collection("Events").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                var event = doc.data();
+                var eventElement = createEventElement(event);
+                eventsContainer.appendChild(eventElement);
+            });
+        });
+
+        function createEventElement(event) {
+            var eventElement = document.createElement('div');
+            eventElement.className = 'event';
+
+            var titleElement = document.createElement('h3');
+            titleElement.textContent = event.name;
+            eventElement.appendChild(titleElement);
+
+            var dateElement = document.createElement('p');
+            dateElement.textContent = 'Date: ' + event.Date;
+            eventElement.appendChild(dateElement);
+
+            var descriptionElement = document.createElement('p');
+            descriptionElement.textContent = event.Description;
+            eventElement.appendChild(descriptionElement);
+
+            var locationElement = document.createElement('p');
+            locationElement.textContent = 'Location: ' + event.Location;
+            eventElement.appendChild(locationElement);
+
+            var directionsButton = document.createElement('a');
+            directionsButton.href =
+                'https://www.google.com/maps/search/?api=1&query=' +
+                encodeURIComponent(event.Location);
+            directionsButton.target = '_blank';
+            directionsButton.textContent = 'Get Directions';
+            eventElement.appendChild(directionsButton);
+
+            return eventElement;
+        }
+
+        function formatEventDate(date) {
+            var options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date ? new Date(date.toDate()).toLocaleDateString(undefined, options) : '';
+        }
+
+        function addEvent(name, date, description, location) {
+            db.collection("Events").add({
+                name: name,
+                Date: date,
+                Description: description,
+                Location: location
+            })
+            .then(function(docRef) {
+                console.log("Event added with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding event: ", error);
+            });
+        }
+    </script>
+</body>
+</html>
